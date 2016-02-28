@@ -22,6 +22,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 
 /**
  *
@@ -60,7 +61,7 @@ public class Brokeris implements Serializable {
         @JoinColumn(name = "BROKERIOID", referencedColumnName = "ID")}, inverseJoinColumns = {
         @JoinColumn(name = "OBJEKTONR", referencedColumnName = "NR")})
     @ManyToMany
-    private List<Objektas> objektasList;
+    private List<Objektas> objektasList = new ArrayList<>();
 
     public Brokeris() {
     }
