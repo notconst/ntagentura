@@ -21,6 +21,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 
 /**
  *
@@ -76,7 +77,7 @@ public class Objektas implements Serializable {
     @Column(name = "TIPAS")
     private String tipas;
     @ManyToMany(mappedBy = "objektasList")
-    private List<Brokeris> brokerisList;
+    private List<Brokeris> brokerisList= new ArrayList<>();
     @JoinColumn(name = "SAVININKONR", referencedColumnName = "NR")
     @ManyToOne(optional = false)
     private Savininkas savininkonr;
