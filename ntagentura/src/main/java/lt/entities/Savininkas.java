@@ -20,6 +20,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.util.ArrayList;
 
 /**
  *
@@ -44,7 +45,7 @@ public class Savininkas implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "savininkonr")
     private List<Objektas> objektasList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "nr")
-    private List<Fizinisasmuo> fizinisasmuoList;
+    private List<Fizinisasmuo> fizinisasmuoList = new  ArrayList<>();
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "savininkas")
     private Juridinisasmuo juridinisasmuo;
 
