@@ -42,8 +42,10 @@ public class Savininkas implements Serializable {
     private Integer nr;
     @Column(name = "TELNR")
     private BigInteger telnr;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "savininkonr")
     private List<Objektas> objektasList;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "nr")
     private List<Fizinisasmuo> fizinisasmuoList = new  ArrayList<>();
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "savininkas")
